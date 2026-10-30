@@ -8,6 +8,7 @@
 
 import AppKit
 import HotKey
+import Sparkle
 import ServiceManagement
 
 @NSApplicationMain
@@ -15,6 +16,11 @@ import ServiceManagement
 class AppDelegate: NSObject, NSApplicationDelegate{
     
     var statusBarController = StatusBarController()
+
+    // Sparkle owns downloading, EdDSA verification, installation and relaunch.
+    // Keep the controller alive for the application's entire lifetime.
+    let updaterController = SPUStandardUpdaterController(
+        startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
     
     var hotKey: HotKey? {
         didSet {
@@ -27,6 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        updaterController.startUpdater()
         setupAutoStartApp()
         registerDefaultValues()
         setupHotKey()

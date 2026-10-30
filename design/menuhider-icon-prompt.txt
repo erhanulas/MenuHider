@@ -1,0 +1,3 @@
+Generated with the built-in imagegen tool.
+Prompt: Polished macOS MenuHider application icon; rounded midnight-blue tile, subtle teal illuminated edge, white left chevron and vertical divider, subdued small icons on the left; dimensional glass/enamel, front-on, no text, transparent outside tile.
+AppIcon variants resized with sips; source preserved here.

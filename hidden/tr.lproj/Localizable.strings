@@ -1,0 +1,14 @@
+"Preferences..." = "Ayarlar…";
+"Toggle Auto Collapse" = "Otomatik Gizlemeyi Aç/Kapat";
+"Enable Auto Collapse" = "Otomatik Gizlemeyi Aç";
+"Disable Auto Collapse" = "Otomatik Gizlemeyi Kapat";
+"Quit" = "Çık";
+"Set Shortcut" = "Kısayol Ata";
+"Expand Menu Bar Items" = "Gizli Simgeleri Göster";
+"Collapse Menu Bar Items" = "Simgeleri Gizle";
+"Toggle Menu Bar Items" = "Simgeleri Göster/Gizle";
+"Unavailable while preserving system controls to keep the menu bar layout stable." = "Sistem öğeleri korunurken menü çubuğunun düzenini sabit tutmak için kullanılamaz.";
+"Always Hidden is unavailable while preserving system controls." = "Sistem öğeleri korunurken her zaman gizli bölümü kullanılamaz.";
+"Tutorial text" = "Simgeleri düzenlemek için ⌘ tuşunu basılı tutarak sürükleyin.\nGizlemek istediğiniz simgeleri okun soluna yerleştirin.\nSimgeleri gizlemek veya yeniden göstermek için oka tıklayın.\nAyarları açmak için oka sağ tıklayın.";
+"Move icons to hide to the left of this line using ⌘." = "⌘ tuşunu basılı tutarak gizlenecek simgeleri bu çizginin soluna taşıyın.";
+"Check for Updates…" = "Güncellemeleri Kontrol Et…";

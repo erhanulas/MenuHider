@@ -32,5 +32,19 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://github.com/erhanulas/MenuHider/releases/latest/download/appcast.xml</string>
+	<key>SUEnableAutomaticChecks</key>
+	<false/>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
+	<key>SUEnableSystemProfiling</key>
+	<false/>
+	<key>SUVerifyUpdateBeforeExtraction</key>
+	<true/>
+	<key>SUPublicEDKey</key>
+	<string>htGteKXohQg13+aFjB8XYuzqYbgaKICszn7m5NZdAf8=</string>
+	<key>SURequireSignedFeed</key>
+	<true/>
 </dict>
 </plist>

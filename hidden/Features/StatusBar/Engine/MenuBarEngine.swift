@@ -13,6 +13,7 @@ import AppKit
 // its own engine without version checks spreading through the controller.
 protocol MenuBarEngine: AnyObject {
     var state: MenuBarEngineState { get }
+    var supportsAlwaysHiddenSection: Bool { get }
 
     func collapse(completion: @escaping (CollapseResult) -> Void)
     func expand()
@@ -30,6 +31,10 @@ protocol MenuBarEngine: AnyObject {
     // Display geometry changed. Re-applies the collapse to the live items when
     // collapsed, so a hot-plug does not leave a stale length behind (PR #354).
     func invalidateLayout()
+}
+
+extension MenuBarEngine {
+    var supportsAlwaysHiddenSection: Bool { true }
 }
 
 enum MenuBarEngineState {

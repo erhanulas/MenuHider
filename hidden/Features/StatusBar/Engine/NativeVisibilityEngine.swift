@@ -32,9 +32,10 @@ import AppKit
 //   bar, so an app launched while collapsed stays hidden until then, the same
 //   as a new icon landing in the hidden section under the old mechanism.
 final class NativeVisibilityEngine: MenuBarEngine {
-    // System item identifiers to keep visible. Unknown identifiers are ignored,
-    // so the range covers items a given Mac does not have (0-63 checked on 27.0).
-    static let systemItemsToKeep = Array(0..<64)
+    // Include identifiers beyond the original 0...63 probe. This grants permission
+    // to draw an item; macOS still decides whether it is enabled or active.
+    // Experimental: this does not guarantee assessment mode preserves AV extras.
+    static let systemItemsToKeep = Array(0...255)
 
     private weak var items: MenuBarItemProvider?
     private let inventory: MenuBarInventoryProviding
@@ -189,7 +190,12 @@ final class NativeVisibilityEngine: MenuBarEngine {
     private func activate(allowing bundles: [String], completion: @escaping (Bool) -> Void) {
         generation += 1
         let generation = self.generation
-        let allowed = (ownBundleIdentifier.map { [$0] } ?? []) + bundles
+        // These owners are deliberately excluded from section classification.
+        // Preserve them regardless of their icons' position or current activity.
+        let allowed = Set(bundles)
+            .union(MenuBarLayoutResolver.systemItemOwners)
+            .union(ownBundleIdentifier.map { [$0] } ?? [])
+            .sorted()
         visibility.activate(allowedSystemItems: Self.systemItemsToKeep,
                             allowedBundleIdentifiers: allowed) { [weak self] result in
             guard let self = self, generation == self.generation else {

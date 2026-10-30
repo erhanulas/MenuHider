@@ -29,9 +29,7 @@ class PreferencesViewController: NSViewController {
     @IBOutlet weak var checkBoxKeepInDock: NSButton!
     @IBOutlet weak var checkBoxLogin: NSButton!
     @IBOutlet weak var checkBoxShowPreferences: NSButton!
-    @IBOutlet weak var checkBoxShowAlwaysHiddenSection: NSButton!
     
-    @IBOutlet weak var checkBoxUseFullStatusbar: NSButton!
     @IBOutlet weak var timePopup: NSPopUpButton!
     
     @IBOutlet weak var btnClear: NSButton!
@@ -77,15 +75,6 @@ class PreferencesViewController: NSViewController {
     
     @IBAction func showPreferencesChanged(_ sender: NSButton) {
         Preferences.isShowPreference = sender.state == .on
-    }
-    
-    
-    @IBAction func showAlwaysHiddenSectionChanged(_ sender: NSButton) {
-        Preferences.alwaysHiddenSectionEnabled = sender.state == .on
-        createTutorialView()
-    }
-    @IBAction func useFullStatusBarOnExpandChanged(_ sender: NSButton) {
-        Preferences.useFullStatusBarOnExpandEnabled = sender.state == .on
     }
     
     
@@ -156,11 +145,10 @@ class PreferencesViewController: NSViewController {
     }
     
     @objc private func updateData(){
-        checkBoxUseFullStatusbar.state = Preferences.useFullStatusBarOnExpandEnabled ? .on : .off
         checkBoxLogin.state = Preferences.isAutoStart ? .on : .off
         checkBoxAutoHide.state = Preferences.isAutoHide ? .on : .off
         checkBoxShowPreferences.state = Preferences.isShowPreference ? .on : .off
-        checkBoxShowAlwaysHiddenSection.state = Preferences.alwaysHiddenSectionEnabled ? .on : .off
+        createTutorialView()
         timePopup.selectItem(at: SelectedSecond.secondToPossition(seconds: Preferences.numberOfSecondForAutoHide))
     }
     
@@ -199,7 +187,7 @@ class PreferencesViewController: NSViewController {
 extension PreferencesViewController {
     
     func createTutorialView() {
-        if Preferences.alwaysHiddenSectionEnabled {
+        if !MenuBarEngineFactory.usesSystemOverflow && Preferences.alwaysHiddenSectionEnabled {
             alwayHideStatusBar()
         }else {
             hideStatusBar()

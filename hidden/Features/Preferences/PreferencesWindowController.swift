@@ -55,12 +55,23 @@ class PreferencesWindowController: NSWindowController {
     }
     
     private func updateVC() {
+        guard let window = window else { return }
+        let controller: NSViewController
+        let contentSize: NSSize
         switch menuSegment {
         case .general:
-            self.window?.contentViewController = preferencesVC
+            controller = preferencesVC
+            contentSize = NSSize(width: 668, height: 481)
         case .about:
-            self.window?.contentViewController = aboutVC
+            controller = aboutVC
+            contentSize = NSSize(width: 600, height: 278)
         }
+        // Swapping controllers retains the previous window size. Restore each
+        // page's designed size so returning from About cannot compress General.
+        let top = window.frame.maxY
+        window.contentViewController = controller
+        window.setContentSize(contentSize)
+        window.setFrameOrigin(NSPoint(x: window.frame.minX, y: top - window.frame.height))
     }
-    
+
 }

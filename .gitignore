@@ -137,3 +137,12 @@ DerivedData/
 /docs/specs/
 /docs/implementation-notes/
 /.planning/
+
+# Local research, generated reports and release staging
+/graphify-out/
+/.graphify*
+/dist/
+*.pem
+*.p12
+*.p8
+*.ed25519

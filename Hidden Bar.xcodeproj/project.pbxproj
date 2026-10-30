@@ -51,6 +51,11 @@
 		F6918B5DB22F557F7D83F739 /* NativeVisibilityBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070AA937997995EA799D01A /* NativeVisibilityBridge.swift */; };
 		A6BC2D15D7C6BDBC5F894D62 /* HBNativeVisibilityShim.m in Sources */ = {isa = PBXBuildFile; fileRef = D1484680F97D4EF3661639C5 /* HBNativeVisibilityShim.m */; };
 		2CEFC27766BCEA39CD11079F /* MenuBarEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57343F39835408A99E25A6E /* MenuBarEngineTests.swift */; };
+		12FBD12A4BDF462A213B9790 /* SystemOverflowEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC4477ADA2EEF581C59271 /* SystemOverflowEngine.swift */; };
+		4840F19512D152FFBFB52363 /* SystemOverflowEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC4477ADA2EEF581C59271 /* SystemOverflowEngine.swift */; };
+		1DCA28E255D485EEA3CE2DF4 /* StatusMenuPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87D98898D143F7F8AC20ED /* StatusMenuPlacement.swift */; };
+		350008714838F66BF6EF8E32 /* StatusMenuPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87D98898D143F7F8AC20ED /* StatusMenuPlacement.swift */; };
+		A27A00000000000000000003 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = A27A00000000000000000004 /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +82,7 @@
 		55F3F1182608923B0054B881 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		55F3F11C2608925A0054B881 /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
 		9220587D22127050008A8B03 /* Hidden.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Hidden.entitlements; path = Hidden/Hidden.entitlements; sourceTree = "<group>"; };
-		929113F121F9D04100173149 /* Hidden Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hidden Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		929113F121F9D04100173149 /* Hidden Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuHider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929113F421F9D04100173149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		929113F821F9D04200173149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929113FB21F9D04200173149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +117,10 @@
 		22254D038882D5996C96A287 /* Hidden-Direct.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hidden-Direct.entitlements; sourceTree = "<group>"; };
 		27A530C718790900F466C145 /* HiddenBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiddenBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57343F39835408A99E25A6E /* MenuBarEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarEngineTests.swift; sourceTree = "<group>"; };
+		F4CC4477ADA2EEF581C59271 /* SystemOverflowEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemOverflowEngine.swift; sourceTree = "<group>"; };
+		FB87D98898D143F7F8AC20ED /* StatusMenuPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuPlacement.swift; sourceTree = "<group>"; };
+		A27A00000000000000000001 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		A27A00000000000000000002 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A5F85F23AA01EE00981CA5 /* HotKey in Frameworks */,
+				A27A00000000000000000003 /* Sparkle in Frameworks */,
 				92C5058121FEC2590084719A /* Cocoa.framework in Frameworks */,
 				92C5057F21FEC24C0084719A /* ServiceManagement.framework in Frameworks */,
 			);
@@ -169,6 +179,7 @@
 			children = (
 				F248811CF183BD0A4D71C4C6 /* NativeVisibilityEngine.swift */,
 				71BED8094EA85DBC0A218F23 /* Native */,
+				F4CC4477ADA2EEF581C59271 /* SystemOverflowEngine.swift */,
 				47BB7E409FBDF2230E9FB31C /* LegacyLengthEngine.swift */,
 				8DDBB306F3907BFB2D9E6DCF /* MenuBarEngine.swift */,
 				56DFDDDEF0042F0DBA1F3307 /* MenuBarEngineFactory.swift */,
@@ -279,6 +290,7 @@
 		A56D368B6ABF45B5283FE4FA /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				FB87D98898D143F7F8AC20ED /* StatusMenuPlacement.swift */,
 				FB0B14538BC3AE95D43DE899 /* AccessibilityMenuBarInventory.swift */,
 				092D9DE26A006349D87B304D /* MenuBarLayout.swift */,
 			);
@@ -321,6 +333,7 @@
 			name = "Hidden Bar";
 			packageProductDependencies = (
 				08A5F85E23AA01EE00981CA5 /* HotKey */,
+				A27A00000000000000000004 /* Sparkle */,
 			);
 			productName = vanillaClone;
 			productReference = 929113F121F9D04100173149 /* Hidden Bar.app */;
@@ -371,6 +384,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				tr,
 				en,
 				Base,
 				"zh-Hans",
@@ -385,6 +399,7 @@
 			mainGroup = 929113E821F9D04100173149;
 			packageReferences = (
 				08A5F85D23AA01EE00981CA5 /* XCRemoteSwiftPackageReference "HotKey" */,
+				A27A00000000000000000005 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 929113F221F9D04100173149 /* Products */;
 			projectDirPath = "";
@@ -426,6 +441,8 @@
 				BBA01366FE8989DC002AC9DF /* MenuBarLayout.swift in Sources */,
 				B0934CB18EB875D05B3EF781 /* MenuBarEngine.swift in Sources */,
 				800F5C1749A0BF5F18E5CB1E /* MenuBarEngineFactory.swift in Sources */,
+				1DCA28E255D485EEA3CE2DF4 /* StatusMenuPlacement.swift in Sources */,
+				12FBD12A4BDF462A213B9790 /* SystemOverflowEngine.swift in Sources */,
 				7B3502A74602F87B6207E929 /* LegacyLengthEngine.swift in Sources */,
 				55F3F1192608923B0054B881 /* Date+Extension.swift in Sources */,
 				08B9F32C2411883300AA0551 /* NSWindow+Extension.swift in Sources */,
@@ -452,6 +469,8 @@
 			files = (
 				78703EDD27C9AA283482C1E3 /* Constant.swift in Sources */,
 				8835DF2D3C3ECAE4C7766945 /* MenuBarEngine.swift in Sources */,
+				350008714838F66BF6EF8E32 /* StatusMenuPlacement.swift in Sources */,
+				4840F19512D152FFBFB52363 /* SystemOverflowEngine.swift in Sources */,
 				D098DA3D69DAABA3A931202C /* LegacyLengthEngine.swift in Sources */,
 				4B5A38D6B3BEBF31D9920742 /* MenuBarLayout.swift in Sources */,
 				A554D3CDC5D46BD58888E63F /* AccessibilityMenuBarInventory.swift in Sources */,
@@ -469,6 +488,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				929113FB21F9D04200173149 /* Base */,
+				A27A00000000000000000001 /* tr */,
 				B350A2CC23AAFB47003A04AC /* zh-Hans */,
 				B8404C9A24041A4300E6DBF8 /* ja */,
 				B1326443261D7E0200319D35 /* fr */,
@@ -485,6 +505,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				967F4B2924169CAF00F18D3C /* en */,
+				A27A00000000000000000002 /* tr */,
 				967F4B2B24169CB200F18D3C /* zh-Hans */,
 				967F4B2C24169CB400F18D3C /* ja */,
 				FF57A44B25E6C50200988FC2 /* zh-Hant */,
@@ -626,7 +647,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
@@ -635,9 +656,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dwarvesv.minimalbar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erhanulas.menuhider;
+				PRODUCT_NAME = MenuHider;
+				PRODUCT_MODULE_NAME = Hidden_Bar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -652,7 +674,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
@@ -661,9 +683,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dwarvesv.minimalbar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erhanulas.menuhider;
+				PRODUCT_NAME = MenuHider;
+				PRODUCT_MODULE_NAME = Hidden_Bar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -741,7 +764,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
@@ -750,9 +773,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dwarvesv.minimalbar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erhanulas.menuhider;
+				PRODUCT_NAME = MenuHider;
+				PRODUCT_MODULE_NAME = Hidden_Bar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -827,7 +851,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
@@ -836,9 +860,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dwarvesv.minimalbar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erhanulas.menuhider;
+				PRODUCT_NAME = MenuHider;
+				PRODUCT_MODULE_NAME = Hidden_Bar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -963,6 +988,11 @@
 				version = 0.1.3;
 			};
 		};
+		A27A00000000000000000005 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+            isa = XCRemoteSwiftPackageReference;
+            repositoryURL = "https://github.com/sparkle-project/Sparkle";
+            requirement = {kind = exactVersion; version = 2.10.1; };
+        };
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -971,6 +1001,11 @@
 			package = 08A5F85D23AA01EE00981CA5 /* XCRemoteSwiftPackageReference "HotKey" */;
 			productName = HotKey;
 		};
+		A27A00000000000000000004 /* Sparkle */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = A27A00000000000000000005;
+            productName = Sparkle;
+        };
 /* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 929113E921F9D04100173149 /* Project object */;

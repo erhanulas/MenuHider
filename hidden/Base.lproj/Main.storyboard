@@ -12,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Hidden Bar" id="1Xt-HY-uBw">
+                            <menuItem title="MenuHider" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Hidden Bar" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="MenuHider" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About Hidden Bar" id="5kV-Vb-QxS">
+                                        <menuItem title="About MenuHider" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -30,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide Hidden Bar" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide MenuHider" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -48,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit Hidden Bar" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit MenuHider" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -73,7 +73,7 @@
             <objects>
                 <windowController storyboardIdentifier="MainWindow" showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="PreferencesWindowController" customModule="Hidden_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="450" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
                         <toolbar key="toolbar" implicitIdentifier="47B2E2C2-82B2-4C57-9EBF-6C8AE0786C9B" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="iQ4-lw-FIM">
@@ -116,7 +116,6 @@
                             <defaultToolbarItems>
                                 <toolbarItem reference="jr4-A4-Yp1"/>
                                 <toolbarItem reference="NIO-JJ-pjq"/>
-                                <toolbarItem reference="jr4-A4-Yp1"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -136,11 +135,11 @@
             <objects>
                 <viewController storyboardIdentifier="aboutVC" id="3gK-Dw-PWX" customClass="AboutViewController" customModule="Hidden_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="PLL-3M-w8R">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="481"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="278"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box autoresizesSubviews="NO" boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="bFi-aV-ejJ">
-                                <rect key="frame" x="0.0" y="203" width="600" height="278"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="278"/>
                                 <view key="contentView" id="0er-r7-2gQ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="278"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +163,7 @@
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ekW-28-SJX">
                                                                     <rect key="frame" x="-2" y="25" width="176" height="41"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Hidden Bar" id="2xp-Ht-xa6">
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="MenuHider" id="2xp-Ht-xa6">
                                                                         <font key="font" metaFont="systemMedium" size="35"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -227,172 +226,6 @@
                                 </constraints>
                                 <color key="fillColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
                             </box>
-                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="22" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ve9-SV-zSn">
-                                <rect key="frame" x="197" y="15" width="206" height="178"/>
-                                <subviews>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4u-KC-g9w">
-                                        <rect key="frame" x="0.0" y="34" width="206" height="144"/>
-                                        <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJr-BE-h8u">
-                                                <rect key="frame" x="0.0" y="120" width="156" height="24"/>
-                                                <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="98N-BJ-EKs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="24" id="APT-eM-eSU"/>
-                                                            <constraint firstAttribute="height" constant="24" id="nho-Qa-Yy9"/>
-                                                        </constraints>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ico_compass" id="Fni-Bp-VZz"/>
-                                                    </imageView>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jmL-Oh-IlC" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="4" width="128" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Know more about us" id="Xb1-xM-sYy">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://dwarves.foundation/"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6zU-Np-10O">
-                                                <rect key="frame" x="0.0" y="80" width="153" height="24"/>
-                                                <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t2o-VV-lxL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="24" id="lfy-Or-pRi"/>
-                                                            <constraint firstAttribute="width" constant="24" id="urd-ld-QXS"/>
-                                                        </constraints>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ico_twitter" id="tB4-GY-gGd"/>
-                                                    </imageView>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c5D-4V-z75" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="4" width="125" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Follow us on Twitter" id="Tba-C7-Zr8">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://twitter.com/dwarvesf"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E0V-e4-Gay">
-                                                <rect key="frame" x="0.0" y="40" width="206" height="24"/>
-                                                <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cGq-9C-qz9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="24" id="H7h-gc-veH"/>
-                                                            <constraint firstAttribute="height" constant="24" id="oEv-o4-RfL"/>
-                                                        </constraints>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ico_github" id="Abo-SQ-xfQ"/>
-                                                    </imageView>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6si-3e-Hzw" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="4" width="178" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="This app is fully open source" id="fqc-io-QOP">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/dwarvesf/hidden"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35p-hx-NQC">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="24"/>
-                                                <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QHX-Zb-2kW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="24" id="6Xd-Lv-Slo"/>
-                                                            <constraint firstAttribute="width" constant="24" id="xzN-t4-Zfa"/>
-                                                        </constraints>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ico_email" id="K3d-Co-Iq1"/>
-                                                    </imageView>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KzE-2n-Rp9" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="4" width="55" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Email us" id="sRr-sO-uV0">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="mailto:macos@d.foundation"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                        </subviews>
-                                        <visibilityPriorities>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                        </visibilityPriorities>
-                                        <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                        </customSpacing>
-                                    </stackView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lhv-JW-S82">
-                                        <rect key="frame" x="32" y="0.0" width="143" height="12"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="MIT © Dwarves Foundation" id="b1t-QR-iSj">
-                                            <font key="font" size="11" name="HelveticaNeue"/>
-                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bFi-aV-ejJ" secondAttribute="trailing" id="8EJ-cF-Z18"/>
@@ -647,53 +480,6 @@ between sections to configure Hidden Bar.</string>
                                                     <action selector="showPreferencesChanged:" target="XfG-lQ-9wD" id="UYB-yR-xTM"/>
                                                 </connections>
                                             </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EQP-7r-FSu">
-                                                <rect key="frame" x="-2" y="64" width="238" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Use the full MenuBar on expanding" bezelStyle="regularSquare" imagePosition="left" inset="2" id="8z8-6N-wnc">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="useFullStatusBarOnExpandChanged:" target="XfG-lQ-9wD" id="kh2-cl-DOH"/>
-                                                </connections>
-                                            </button>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nE7-aX-FH9">
-                                                <rect key="frame" x="0.0" y="35" width="230" height="20"/>
-                                                <subviews>
-                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yaS-iD-h7g" userLabel="Check Box Show Always Hidden Section">
-                                                        <rect key="frame" x="-2" y="1" width="204" height="18"/>
-                                                        <buttonCell key="cell" type="check" title="Enable always hidden section" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Nhn-ch-1f7">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                        <connections>
-                                                            <action selector="showAlwaysHiddenSectionChanged:" target="XfG-lQ-9wD" id="y4P-J3-NYz"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CZq-vT-3m1">
-                                                        <rect key="frame" x="207" y="-4" width="25" height="25"/>
-                                                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6y0-DP-P8w">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                            <connections>
-                                                                <action selector="btnAlwayHiddenHelpPressed:" target="XfG-lQ-9wD" id="W71-gh-ijE"/>
-                                                            </connections>
-                                                        </buttonCell>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="yaS-iD-h7g" firstAttribute="centerY" secondItem="nE7-aX-FH9" secondAttribute="centerY" id="Yw4-03-7GH"/>
-                                                    <constraint firstItem="CZq-vT-3m1" firstAttribute="centerY" secondItem="nE7-aX-FH9" secondAttribute="centerY" id="tcK-Sd-JfM"/>
-                                                </constraints>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bf8-qr-hjT">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="25"/>
                                                 <subviews>
@@ -760,12 +546,8 @@ between sections to configure Hidden Bar.</string>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -862,9 +644,7 @@ between sections to configure Hidden Bar.</string>
                         <outlet property="btnShortcut" destination="yKf-P1-I45" id="AFr-y7-VbP"/>
                         <outlet property="checkBoxAutoHide" destination="gj1-Ms-4No" id="Ibl-5H-2vh"/>
                         <outlet property="checkBoxLogin" destination="cbR-Jv-adm" id="DFO-De-0KU"/>
-                        <outlet property="checkBoxShowAlwaysHiddenSection" destination="yaS-iD-h7g" id="T5N-bN-yl2"/>
                         <outlet property="checkBoxShowPreferences" destination="gWT-L1-Xdf" id="sC8-cw-Fmh"/>
-                        <outlet property="checkBoxUseFullStatusbar" destination="EQP-7r-FSu" id="Vll-3t-F9V"/>
                         <outlet property="lblAlwayHidden" destination="eBG-Wk-IXv" id="JaJ-0i-o6U"/>
                         <outlet property="statusBarStackView" destination="pJz-eb-ydI" id="huU-as-oWi"/>
                         <outlet property="textFieldTitle" destination="RGE-Xv-zm5" id="v43-3R-PwU"/>
