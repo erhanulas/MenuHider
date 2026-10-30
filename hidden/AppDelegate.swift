@@ -13,14 +13,14 @@ import ServiceManagement
 
 @NSApplicationMain
 
-class AppDelegate: NSObject, NSApplicationDelegate{
+class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     
     var statusBarController = StatusBarController()
 
     // Sparkle owns downloading, EdDSA verification, installation and relaunch.
     // Keep the controller alive for the application's entire lifetime.
-    let updaterController = SPUStandardUpdaterController(
-        startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
+    lazy var updaterController = SPUStandardUpdaterController(
+        startingUpdater: false, updaterDelegate: self, userDriverDelegate: nil)
     
     var hotKey: HotKey? {
         didSet {
@@ -41,6 +41,17 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         detectLTRLang()
     }
     
+    func feedURLString(for updater: SPUUpdater) -> String? {
+        // A long-running menu-bar app can retain GitHub's previous latest-release
+        // redirect. Give each check its own URL while retaining signed contents.
+        guard let feed = Bundle.main.object(forInfoDictionaryKey: "SUFeedURL") as? String,
+              var components = URLComponents(string: feed) else { return nil }
+        var query = components.queryItems ?? []
+        query.append(URLQueryItem(name: "check", value: UUID().uuidString))
+        components.queryItems = query
+        return components.url?.absoluteString
+    }
+
     func openPreferencesIfNeeded() {
         if Preferences.isShowPreference {
             Util.showPrefWindow()

@@ -38,6 +38,8 @@ gh release edit v1.0.2 --repo erhanulas/MenuHider --draft=false --latest
 Uygulamanın sabit besleme adresi:
 `https://github.com/erhanulas/MenuHider/releases/latest/download/appcast.xml`
 
+Her kontrol, GitHub latest yönlendirmesinin aynı uygulama oturumunda eski sürümde kalmasını önlemek için besleme adresine rastgele bir `check` parametresi ekler. İmzalı içerik ve arşiv adresleri değişmez.
+
 Appcast her sürümün kendi etiketli ZIP adresini içerir. `generate_appcast` sonrasında appcast dosyasını elle değiştirmeyin; besleme imzası geçersiz olur. Önce tüm dosyaları draft release'e yükleyin, ardından release'i yayınlayın; böylece uygulama eksik paketli bir besleme görmez.
 
 ## Gerçek güncelleme kontrolü
