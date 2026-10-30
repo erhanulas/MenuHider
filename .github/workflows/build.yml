@@ -1,17 +1,21 @@
-name: Build and test
+name: Build
 on:
   push:
     branches: [main]
   pull_request:
 permissions:
   contents: read
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  test:
+  build:
     runs-on: macos-15
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Build and test
+      - name: Build universal app
         run: >-
           xcodebuild -project 'Hidden Bar.xcodeproj' -scheme 'Hidden Bar'
-          -configuration Debug-Direct -derivedDataPath build/DerivedData
-          CODE_SIGNING_ALLOWED=NO test
+          -configuration Release-Direct -derivedDataPath build/DerivedData
+          CODE_SIGNING_ALLOWED=NO 'ARCHS=arm64 x86_64' ONLY_ACTIVE_ARCH=NO build
