@@ -15,10 +15,12 @@ Everything Hidden Bar can do, including the parts with no UI.
 ### macOS 27, direct download build
 
 The direct (non-App Store) build hides icons natively on macOS 27, and the
-**arrow itself is the boundary**: there is no `|` separator. ⌘-drag icons to
-the arrow's left to hide them when collapsed, to its right to keep them
-visible. The always-hidden separator still appears (while expanded) when that
-section is enabled.
+**`|` separator is the boundary**. ⌘-drag icons to the line's left to hide
+them when collapsed, or to its right to keep them visible. Icons between the
+line and the arrow stay visible. The line appears when expanded and disappears
+when collapsed, while retaining its saved position. It never expands into an
+empty reservation. The always-hidden
+separator appears while expanded when that section is enabled.
 
 - Needs **Accessibility** permission (System Settings › Privacy & Security ›
   Accessibility) to see where your icons are. Without it the bar stays

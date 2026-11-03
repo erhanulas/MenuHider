@@ -1,0 +1,11 @@
+MenuHider 1.0.3
+
+- macOS 27 ve harici monitörlerde simgeler arasında geniş boşluk bırakan gizleme yöntemi değiştirildi.
+- Gizleme sınırı ayrı | çizgisiyle belirlenir. Çizginin solundaki simgeler gizlenir; çizgi ile ok arasındakiler görünür kalır. Simgeleri ⌘ basılı tutarak taşıyabilirsiniz.
+- Çizgi yalnızca simgeler açıkken görünür; gizlendiğinde kaldırılır ve sınır konumu korunur.
+
+macOS 27'de MenuHider için Erişilebilirlik izni gerekir. Güncellemeden sonra simgeler gizlenmezse Sistem Ayarları → Gizlilik ve Güvenlik → Erişilebilirlik (veya Aygıt Denetimi ve Veri Erişimi) bölümünde MenuHider iznini kapatıp yeniden açın.
+Gizleme uygulama bazındadır. macOS sistem simgeleri görünür kalır; bazı etkinlik simgeleri sürekli görünebilir.
+
+Apple Silicon ve Intel için universal uygulama; macOS 13+.
+Apple Developer ID/noter onayı yoktur. Güncelleme arşivi ve beslemesi EdDSA imzalıdır.

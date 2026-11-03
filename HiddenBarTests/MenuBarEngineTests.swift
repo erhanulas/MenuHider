@@ -92,7 +92,7 @@ private func item(_ bundle: String?, x: CGFloat, width: CGFloat = 24) -> MenuBar
 }
 
 // LTR bar used throughout: always-hidden separator at 1000, the boundary at 1300
-// (the separator for the resolver, the arrow for the native engine).
+// (the regular separator for both the resolver and native engine).
 private let alwaysHiddenSeparator = CGRect(x: 1000, y: 0, width: 20, height: 24)
 private let separator = CGRect(x: 1300, y: 0, width: 20, height: 24)
 
@@ -177,7 +177,11 @@ final class NativeVisibilityEngineTests: XCTestCase {
         let items = self.items!
         return NativeVisibilityEngine(items: items, inventory: inventory, visibility: visibility,
                                       ownBundleIdentifier: "com.dwarvesv.minimalbar",
-                                      itemFrame: { $0 === items.toggleItem ? separator : alwaysHiddenSeparator },
+                                      itemFrame: {
+                                          if $0 === items.separatorItem { return separator }
+                                          if $0 === items.toggleItem { return CGRect(x: 1500, y: 0, width: 20, height: 24) }
+                                          return alwaysHiddenSeparator
+                                      },
                                       isLTR: { true })
     }
 
@@ -189,14 +193,58 @@ final class NativeVisibilityEngineTests: XCTestCase {
         XCTAssertEqual(engine.state, .calibrating)
         XCTAssertEqual(visibility.requests.first?.bundles, allowedBundles(["com.dwarvesv.minimalbar", "com.visible"]))
         XCTAssertEqual(visibility.requests.first?.systemItems, NativeVisibilityEngine.systemItemsToKeep)
-        XCTAssertFalse(items.separatorItem.isVisible, "the arrow is the boundary; no separator needed")
+        XCTAssertTrue(items.separatorItem.isVisible, "the visible line is the hiding boundary")
 
         visibility.succeed(0)
         XCTAssertEqual(engine.state, .collapsed)
         XCTAssertEqual(results, [.collapsed])
 
+        XCTAssertTrue(items.separatorItem.isVisible, "retain the registered slot and its saved order")
+        XCTAssertEqual(items.separatorItem.length, 0)
+        XCTAssertNil(items.separatorItem.button?.image, "no line remains inside the status-item padding")
+        XCTAssertEqual(items.separatorItem.button?.isEnabled, false)
         engine.expand()
-        XCTAssertFalse(items.separatorItem.isVisible)
+        XCTAssertTrue(items.separatorItem.isVisible)
+        XCTAssertEqual(items.separatorItem.length, 20)
+        XCTAssertEqual(items.separatorItem.button?.isEnabled, true)
+    }
+
+    func testAppsBetweenDividerAndArrowStayVisibleAndMovesAcrossDividerAreReRead() {
+        let engine = makeEngine()
+        // The visible app at x=1400 sits left of the arrow (1500), but right
+        // of the divider (1300). Arrow-based classification would hide it.
+        engine.collapse { _ in }
+        XCTAssertTrue(visibility.requests[0].bundles.contains("com.visible"))
+        XCTAssertFalse(visibility.requests[0].bundles.contains("com.hidden"))
+        visibility.succeed(0)
+        engine.expand()
+
+        inventory.items = [item("com.hidden", x: 1350), item("com.visible", x: 1200)]
+        engine.collapse { _ in }
+        XCTAssertTrue(visibility.requests[1].bundles.contains("com.hidden"))
+        XCTAssertFalse(visibility.requests[1].bundles.contains("com.visible"))
+    }
+
+    func testMissingDividerDoesNotFallBackToArrowOrHideApps() {
+        let items = self.items!
+        let engine = NativeVisibilityEngine(items: items, inventory: inventory, visibility: visibility,
+                                          itemFrame: { $0 === items.separatorItem ? nil : separator })
+        var result: CollapseResult?
+        engine.collapse { result = $0 }
+        XCTAssertEqual(result, .unavailable)
+        XCTAssertTrue(visibility.requests.isEmpty)
+        XCTAssertTrue(items.separatorItem.isVisible)
+    }
+
+    func testRTLUsesDividerRatherThanArrow() {
+        let items = self.items!
+        inventory.items = [item("com.visible", x: 1200), item("com.hidden", x: 1400)]
+        let engine = NativeVisibilityEngine(items: items, inventory: inventory, visibility: visibility,
+                                          itemFrame: { $0 === items.separatorItem ? separator : alwaysHiddenSeparator },
+                                          isLTR: { false })
+        engine.collapse { _ in }
+        XCTAssertTrue(visibility.requests[0].bundles.contains("com.visible"))
+        XCTAssertFalse(visibility.requests[0].bundles.contains("com.hidden"))
     }
 
     func testSystemHostsRemainAllowedWithoutInventoryAndItemsAbove63AreKept() {
@@ -507,5 +555,29 @@ final class StatusMenuPlacementTests: XCTestCase {
                                               visibleFrame: NSRect(x: -1920, y: -200, width: 1920, height: 1056),
                                               menuWidth: 300, buttonWidth: 24, menuBarHeight: 24, safeAreaTop: 0)
         XCTAssertEqual(point, NSPoint(x: -1912, y: 854))
+    }
+}
+
+// MARK: - Engine selection
+
+final class MenuBarEngineFactoryTests: XCTestCase {
+    func testDirectBuildUsesNativeHidingOnMacOS27WithoutReservingSpace() {
+        let items = FakeItems()
+        let engine = MenuBarEngineFactory.make(items: items, osMajorVersion: 27)
+        #if HIDDENBAR_NATIVE_VISIBILITY
+        XCTAssertFalse(MenuBarEngineFactory.usesSystemOverflow(on: 27))
+        XCTAssertTrue(engine is NativeVisibilityEngine)
+        XCTAssertTrue(items.separatorItem.isVisible)
+        XCTAssertEqual(items.separatorItem.length, 20, "only a fixed divider, no wide blank spacer")
+        #else
+        XCTAssertTrue(MenuBarEngineFactory.usesSystemOverflow(on: 27))
+        XCTAssertTrue(engine is SystemOverflowEngine)
+        #endif
+    }
+
+    func testOlderMacOSKeepsLegacyHiding() {
+        let items = FakeItems()
+        XCTAssertTrue(MenuBarEngineFactory.make(items: items, osMajorVersion: 26) is LegacyLengthEngine)
+        XCTAssertFalse(MenuBarEngineFactory.usesSystemOverflow(on: 26))
     }
 }

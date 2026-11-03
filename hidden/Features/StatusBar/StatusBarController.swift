@@ -179,9 +179,9 @@ class StatusBarController: MenuBarItemProvider {
             button.toolTip = label
             button.setAccessibilityLabel(label)
         } else {
-            btnSeparate.button?.image = imgIconLine
+            // The engine owns the divider's image and enabled state. Restoring
+            // them here would redraw the native divider just after collapse.
             btnSeparate.menu = statusMenu
-            btnSeparate.button?.isEnabled = true
             if btnExpandCollapse.length != NSStatusItem.variableLength {
                 btnExpandCollapse.length = NSStatusItem.variableLength
             }

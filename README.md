@@ -13,7 +13,8 @@ Bu ilk dağıtım ad hoc imzalıdır; Apple Developer ID ile imzalanmış veya n
 - Simgeleri göstermek/gizlemek için menü çubuğundaki sol oka tıklayın.
 - Simgeler açıkken sınır çizgisi görünür. ⌘ tuşunu basılı tutarak çizgiyi okun hemen soluna yerleştirin; gizlenecek simgeler çizginin solunda olmalı.
 - Gizliyken çizginin görüntüsü kaldırılır ve ok kullanılabilir kalır.
-- macOS 27'de sistemin taşma alanı kullanılır; mikrofon gibi etkinliğe göre gösterilen sistem denetimlerinin normal görünürlüğü korunur. Hangi simgelerin taşacağına macOS karar verir; ekran boyutu ve yerleşim sonucu etkileyebilir.
+- macOS 27'de doğrudan gizleme kullanılır; harici monitörlerde geniş boşluk bırakılmaz. **Sistem Ayarları → Gizlilik ve Güvenlik → Erişilebilirlik** bölümünde MenuHider izni gerekir. macOS sürümüne göre izin bölümü **Aygıt Denetimi ve Veri Erişimi** adıyla da görünebilir.
+- Çizgi ile ok arasındaki simgeler görünür kalır. Gizleme uygulama bazındadır; aynı uygulamanın birden fazla simgesi birlikte yönetilir. macOS sistem simgeleri görünür kalır; bazı etkinlik simgeleri sürekli görünebilir.
 - Oka sağ tıklayarak Ayarlar'a ulaşabilirsiniz.
 
 ## Güncelleme

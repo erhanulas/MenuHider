@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D73A19C404120B506A920101 /* MenuBarEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DFDDDEF0042F0DBA1F3307 /* MenuBarEngineFactory.swift */; };
 		00117C4426600671005E517C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00117C4326600671005E517C /* Assets.swift */; };
 		00137CDF24A63DB1004AC855 /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00137CDE24A63DB1004AC855 /* Notification.Name+Extension.swift */; };
 		0842CDFB23A9FDD000D14BD4 /* GlobalKeybindingPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842CDFA23A9FDD000D14BD4 /* GlobalKeybindingPreferences.swift */; };
@@ -471,6 +472,7 @@
 				8835DF2D3C3ECAE4C7766945 /* MenuBarEngine.swift in Sources */,
 				350008714838F66BF6EF8E32 /* StatusMenuPlacement.swift in Sources */,
 				4840F19512D152FFBFB52363 /* SystemOverflowEngine.swift in Sources */,
+				D73A19C404120B506A920101 /* MenuBarEngineFactory.swift in Sources */,
 				D098DA3D69DAABA3A931202C /* LegacyLengthEngine.swift in Sources */,
 				4B5A38D6B3BEBF31D9920742 /* MenuBarLayout.swift in Sources */,
 				A554D3CDC5D46BD58888E63F /* AccessibilityMenuBarInventory.swift in Sources */,
@@ -647,7 +649,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 102;
+				CURRENT_PROJECT_VERSION = 103;
 				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
@@ -656,7 +658,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.erhanulas.menuhider;
 				PRODUCT_NAME = MenuHider;
 				PRODUCT_MODULE_NAME = Hidden_Bar;
@@ -674,7 +676,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 102;
+				CURRENT_PROJECT_VERSION = 103;
 				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
@@ -683,7 +685,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.erhanulas.menuhider;
 				PRODUCT_NAME = MenuHider;
 				PRODUCT_MODULE_NAME = Hidden_Bar;
@@ -764,7 +766,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 102;
+				CURRENT_PROJECT_VERSION = 103;
 				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
@@ -773,7 +775,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.erhanulas.menuhider;
 				PRODUCT_NAME = MenuHider;
 				PRODUCT_MODULE_NAME = Hidden_Bar;
@@ -851,7 +853,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 102;
+				CURRENT_PROJECT_VERSION = 103;
 				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
@@ -860,7 +862,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.erhanulas.menuhider;
 				PRODUCT_NAME = MenuHider;
 				PRODUCT_MODULE_NAME = Hidden_Bar;

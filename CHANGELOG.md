@@ -1,5 +1,13 @@
 # Changelog
 
+## MenuHider 1.0.3 (2026-11-03)
+
+- Use native hiding in direct macOS 27 builds to avoid wide empty reservations on external displays.
+- Restore the separate hiding boundary: items between the line and arrow remain visible.
+- Hide the boundary image when collapsed and restore it when expanded, preserving its saved position.
+- Add regression coverage for engine selection, divider-based classification, and divider visibility.
+- macOS 27 requires Accessibility permission; system controls remain allowed and some activity items may stay visible.
+
 ## v1.11.1 (2026-09-18)
 
 ### Fixed
